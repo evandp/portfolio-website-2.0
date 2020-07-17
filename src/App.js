@@ -200,8 +200,6 @@ export default function Album() {
 
   return (
     <React.Fragment>
-      <ParticlesBg type="square" bg={true}/>
-
       <CssBaseline />
       {/* <AppBar position="relative">
         <Toolbar>
