@@ -176,7 +176,7 @@ function ContactModal() {
           </Typography> */}
             <Typography component="h4" color="textPrimary" gutterBottom>
               The best way to reach me is by email. 
-              Feel free to call/text me with regard to time sensitive matters.
+              Feel free to text or call me regarding time sensitive matters.
             </Typography>
 
             <Typography align="center">edp46@cornell.edu</Typography>
