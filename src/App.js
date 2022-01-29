@@ -249,11 +249,11 @@ export default function Album() {
             </div>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} maxWidth="lg">
           {/* End hero unit */}
           <Grid container spacing={10}>
             {cards.map((card) => (
-              <Grid item key={card.index} xs={12} sm={6} md={4}>
+              <Grid item key={card.index} xs={12} sm={6} md={3}>
                 <Card className={classes.card.index} style={cardStyle}>
                   <CardMedia
                     className={classes.cardMedia}
