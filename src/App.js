@@ -174,9 +174,8 @@ function ContactModal() {
           {/* <Typography component="h2" color="textPrimary" gutterBottom>
             Contact Information:
           </Typography> */}
-            <Typography component="h4" color="textPrimary" gutterBottom>
-              The best way to reach me is by email. 
-              Feel free to text or call me regarding time sensitive matters.
+            <Typography component="h4" color="textPrimary" align="center" gutterBottom>
+              The best way to reach me is by email. Feel free to text or call me regarding time sensitive matters
             </Typography>
 
             <Typography align="center">edp46@cornell.edu</Typography>
@@ -233,7 +232,7 @@ export default function Album() {
               </Grid> 
             </Grid>*/}
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-	       Hello, I am a SWE at Lyft and previously a Computer Science student at Cornell. I am interested in distributed systems and programming language design
+	       Hello, I am a SWE at Lyft and previously a CS student at Cornell. I am interested in distributed systems and programming language design
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
