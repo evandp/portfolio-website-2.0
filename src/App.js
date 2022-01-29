@@ -233,7 +233,7 @@ export default function Album() {
               </Grid> 
             </Grid>*/}
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Hello, I am a senior at Cornell majoring in Computer Science. I'm interested in distributed systems theory, scalable storage systems, and robotics
+	       Hello, I am a SWE at Lyft and previously a Computer Science student at Cornell. I am interested in distributed systems and programming language design
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
