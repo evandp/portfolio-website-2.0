@@ -88,17 +88,23 @@ const useStyles = makeStyles((theme) => ({
 const cards = [{
   index: 1,
   image: lyft,
+  role: "SWE",
+  description: "As a member of the Capacity & Efficiency team I am building tools for managing AWS EC2 Reserved Instances to enable 8-figure annual savings.",
+  learnMore: false,
+}, {
+  index: 2,
+  image: lyft,
   role: "SWE Reliability Intern",
   description: "Created a service to monitor and compile the reliability of all of Lyft's services which can be reported to engineering directors.",
   learnMore: false,
 }, {
-  index: 2,
+  index: 3,
   image: uber,
   role: "SWE Controls Intern",
   description: "Created library for low level protocols to communicate between main compute stack and vehicle controller.",
   learnMore: false,
 }, {
-  index: 3,
+  index: 4,
   image: cuair,
   role: "Platform Subteam Lead",
   description: "Led team of 10 members to write software for an autonomous plane. Was responsible for entire imaging pipeline.",
