@@ -1,9 +1,7 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import Avatar from 'react-avatar';
 import Backdrop from '@material-ui/core/Backdrop';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,7 +10,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Fade from '@material-ui/core/Fade';
 import Grid from '@material-ui/core/Grid';
 import Modal from '@material-ui/core/Modal';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -23,19 +20,6 @@ import uber from './imgs/uberatg.jpg';
 import cuair from './imgs/cuair.jpg';
 import headshot from './imgs/headshot.jpg';
 import resume from './imgs/resume.pdf';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -194,10 +178,6 @@ function ContactModal() {
     </Modal>
   </div>
   );
-}
-
-function openLink(link: string) {
-  window.open(link)
 }
 
 function openResume() {
