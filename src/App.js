@@ -17,6 +17,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import groq from './imgs/groq.png';
 import lyft from './imgs/lyft.jpg';
 import uber from './imgs/uberatg.jpg';
 import cuair from './imgs/cuair.jpg';
@@ -53,8 +54,8 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     height: '100%',
-    display: 'flex',    border: '0px solid #000',
-
+    display: 'flex',
+    border: '0px solid #000',
     flexDirection: 'column',
   },
   cardMedia: {
@@ -85,49 +86,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [{
+const cards = [
+{
   index: 1,
+  image: groq,
+  role: "Backend Architect",
+  description: "Groq is an AI accelerator chip company with a unique dataflow architecture. I am on the Platform Software team that is working to scale Groq's capabilities to multi rack systems.",
+  learnMoreLink: "https://groq.com",
+},
+{
+  index: 2,
   image: lyft,
   role: "SWE",
   description: "As a member of the Capacity & Efficiency team I am building tools for managing AWS EC2 Reserved Instances to enable 8-figure annual savings.",
-  learnMore: false,
-}, {
-  index: 2,
-  image: lyft,
-  role: "SWE Reliability Intern",
-  description: "Created a service to monitor and compile the reliability of all of Lyft's services which can be reported to engineering directors.",
-  learnMore: false,
-}, {
+},
+{
   index: 3,
   image: uber,
-  role: "SWE Controls Intern",
+  role: "SWE Intern",
   description: "Created library for low level protocols to communicate between main compute stack and vehicle controller.",
-  learnMore: false,
-}, {
+},
+{
   index: 4,
   image: cuair,
   role: "Platform Subteam Lead",
-  description: "Led team of 10 members to write software for an autonomous plane. Was responsible for entire imaging pipeline.",
-  learnMore: true
-}];
+  description: "Participated in competition team that designs and builds autonomous planes. Led team responsible for the plane's imaging pipeline.",
+  learnMoreLink: "https://cuair.org",
+}
+];
 
 const cardStyle = {
   display: 'block',
-  width: '15vw',
+  maxWidth: 350,
   transitionDuration: '0.3s',
-  // height: '45vw'
 }
 
 const cardMediaStyle = {
-  height: '13vw'
 }
 
 function LearnMore(props) {
-  var hasLink = props.hasLink
-  if (hasLink) {
+  var link = props.link
+  var handleClick = () => {
+    window.open(link)
+  }
+  if (link) {
     return (
       <CardActions>
-        <Button size="medium" color="primary" onClick={openCUAir}>
+        <Button size="medium" color="primary" onClick={handleClick}>
           Learn More
         </Button>
       </CardActions>
@@ -175,10 +180,10 @@ function ContactModal() {
             Contact Information:
           </Typography> */}
             <Typography component="h4" color="textPrimary" align="center" gutterBottom>
-              The best way to reach me is by email. Feel free to text or call me regarding time sensitive matters
+              The best way to reach me is by email. Please text or call me for time sensitive matters.
             </Typography>
 
-            <Typography align="center">edp46@cornell.edu</Typography>
+            <Typography align="center">evandp1999@gmail.com</Typography>
 
             <Typography align="center">(631)-624-5575</Typography>
           </Container>
@@ -191,8 +196,8 @@ function ContactModal() {
   );
 }
 
-function openCUAir() {
-  window.open('https://www.cuair.org')
+function openLink(link: string) {
+  window.open(link)
 }
 
 function openResume() {
@@ -205,54 +210,54 @@ export default function Album() {
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Evan Patrick
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
-        {/* Hero unit */}
         <div className={classes.heroContent}>
-
-          <Container maxWidth="sm">
-            {/* <Grid container spacing={4}> */}
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" bold={true} gutterBottom>
-                Evan Patrick
-              </Typography>
-
-              {/* <Grid item xs={6}>
-                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                  Evan Patrick
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Avatar src={headshot} round={true} size={250}/>
-              </Grid> 
-            </Grid>*/}
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-	       Hello, I am a SWE at Lyft and previously a CS student at Cornell. I am interested in distributed systems and programming language design
+        <Grid container>
+          <Grid item xs={1}/>
+          <Grid item xs={10}>
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" bold={true} gutterBottom>
+              Evan Patrick
             </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary" onClick={openResume}>
-                    Resume
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <ContactModal/>
-                </Grid>
+          </Grid>
+          <Grid item xs={1}/>
+        </Grid>
+        <Grid
+          container
+          spacing={8}
+          alignItems="center"
+          justify="center"
+          stype={{ minHeight: '100vh' }}
+        >
+          <Grid item xs="auto">
+            <Avatar src={headshot} round={true} size={250}/>
+
+          </Grid> 
+            <Grid item xs={6} md={4}> 
+              <Typography variant="h5" color="textSecondary" paragraph>
+                 Hello, I am a Software Engineer at Groq on the Platform SW team. I love to learn, teach, and solve hard problems with others.
+               </Typography>
+              <Typography variant="h5" color="textSecondary" paragraph>
+                 My background is in cloud computing and distributed systems and I aspire to explore everything that computer science and computer engineering has to offer.
+               </Typography>
+            </Grid>
+          </Grid>
+          <div className={classes.heroButtons}>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary" onClick={openResume}>
+                  Resume
+                </Button>
               </Grid>
-            </div>
-          </Container>
+              <Grid item>
+                <ContactModal/>
+              </Grid>
+            </Grid>
+          </div>
         </div>
         <Container className={classes.cardGrid} maxWidth="lg">
           {/* End hero unit */}
-          <Grid container spacing={10}>
+          <Grid container spacing={4} align="center">
             {cards.map((card) => (
-              <Grid item key={card.index} xs={12} sm={6} md={3}>
+              <Grid item key={card.index} xs={12} md={3}>
                 <Card className={classes.card.index} style={cardStyle}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -267,7 +272,7 @@ export default function Album() {
                       {card.description}
                     </Typography>
                   </CardContent>
-                  <LearnMore hasLink={card.learnMore}/>
+                  <LearnMore link={card.learnMoreLink}/>
                 </Card>
               </Grid>
             ))}
