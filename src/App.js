@@ -205,59 +205,53 @@ export default function Album() {
           spacing={8}
           alignItems="center"
           justify="center"
-          stype={{ minHeight: '100vh' }}
         >
           <Grid item xs="auto">
             <Avatar src={headshot} round={true} size={250}/>
-
           </Grid> 
-            <Grid item xs={6} md={4}> 
-              <Typography variant="h5" color="textSecondary" paragraph>
-                 Hello, I am a Software Engineer at Groq on the Platform SW team. I love to learn, teach, and solve hard problems with others.
-               </Typography>
-              <Typography variant="h5" color="textSecondary" paragraph>
-                 My background is in cloud computing and distributed systems and I aspire to explore everything that computer science and computer engineering has to offer.
-               </Typography>
+          <Grid item xs={10} sm={4}> 
+            <Typography variant="h5" color="textSecondary" paragraph>
+               Hello, I am a Software Engineer at Groq on the Platform SW team. I love to learn, teach, and solve hard problems with others.
+             </Typography>
+          </Grid>
+        </Grid>
+        <div className={classes.heroButtons}>
+          <Grid container spacing={2} justify="center">
+            <Grid item>
+              <Button variant="contained" color="primary" onClick={openResume}>
+                Resume
+              </Button>
+            </Grid>
+            <Grid item>
+              <ContactModal/>
             </Grid>
           </Grid>
-          <div className={classes.heroButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary" onClick={openResume}>
-                  Resume
-                </Button>
-              </Grid>
-              <Grid item>
-                <ContactModal/>
-              </Grid>
-            </Grid>
-          </div>
         </div>
-        <Container className={classes.cardGrid} maxWidth="lg">
-          {/* End hero unit */}
-          <Grid container spacing={4} align="center">
-            {cards.map((card) => (
-              <Grid item key={card.index} xs={12} md={3}>
-                <Card className={classes.card.index} style={cardStyle}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={card.image}
-                    style={cardMediaStyle}
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.role}
-                    </Typography>
-                    <Typography>
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                  <LearnMore link={card.learnMoreLink}/>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+      </div>
+      <Container className={classes.cardGrid} maxWidth="lg">
+        <Grid container spacing={4} align="center">
+          {cards.map((card) => (
+            <Grid item key={card.index} xs={12} md={3}>
+              <Card className={classes.card.index} style={cardStyle}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={card.image}
+                  style={cardMediaStyle}
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {card.role}
+                  </Typography>
+                  <Typography>
+                    {card.description}
+                  </Typography>
+                </CardContent>
+                <LearnMore link={card.learnMoreLink}/>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </React.Fragment>  
   );
 }
